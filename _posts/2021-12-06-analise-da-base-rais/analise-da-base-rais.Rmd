@@ -11,13 +11,22 @@ output:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Este é o meu **primeiro projeto** no portfólio.
 
 
+- beatriz
+    - professora
+    
+1. beatriz
+
+    1.1. professora
+    
+    1.2. palestrante
+    
+1. beatriz
+1. julio
+    
