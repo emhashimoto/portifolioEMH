@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["analiseraisreal_files/anchor-4.2.2/anchor.min.js","analiseraisreal_files/bowser-1.9.3/bowser.min.js","analiseraisreal_files/distill-2.2.21/template.v2.js","analiseraisreal_files/header-attrs-2.11/header-attrs.js","analiseraisreal_files/jquery-3.6.0/jquery-3.6.0.js","analiseraisreal_files/jquery-3.6.0/jquery-3.6.0.min.js","analiseraisreal_files/jquery-3.6.0/jquery-3.6.0.min.map","analiseraisreal_files/popper-2.6.0/popper.min.js","analiseraisreal_files/tippy-6.2.7/tippy-bundle.umd.min.js","analiseraisreal_files/tippy-6.2.7/tippy-light-border.css","analiseraisreal_files/tippy-6.2.7/tippy.css","analiseraisreal_files/tippy-6.2.7/tippy.umd.min.js","analiseraisreal_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["analiseraisreal_files/anchor-4.2.2/anchor.min.js","analiseraisreal_files/bowser-1.9.3/bowser.min.js","analiseraisreal_files/distill-2.2.21/template.v2.js","analiseraisreal_files/figure-html5/unnamed-chunk-10-1.png","analiseraisreal_files/figure-html5/unnamed-chunk-11-1.png","analiseraisreal_files/figure-html5/unnamed-chunk-13-1.png","analiseraisreal_files/figure-html5/unnamed-chunk-20-1.png","analiseraisreal_files/figure-html5/unnamed-chunk-5-1.png","analiseraisreal_files/figure-html5/unnamed-chunk-9-1.png","analiseraisreal_files/header-attrs-2.11/header-attrs.js","analiseraisreal_files/jquery-3.6.0/jquery-3.6.0.js","analiseraisreal_files/jquery-3.6.0/jquery-3.6.0.min.js","analiseraisreal_files/jquery-3.6.0/jquery-3.6.0.min.map","analiseraisreal_files/popper-2.6.0/popper.min.js","analiseraisreal_files/tippy-6.2.7/tippy-bundle.umd.min.js","analiseraisreal_files/tippy-6.2.7/tippy-light-border.css","analiseraisreal_files/tippy-6.2.7/tippy.css","analiseraisreal_files/tippy-6.2.7/tippy.umd.min.js","analiseraisreal_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1524,23 +1524,6 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 3    Tom Hardy   Christian Bale Joseph Gordon-Levitt
 4 Daryl Sabara  Samantha Morton         Polly Walker
 5 J.K. Simmons     James Franco        Kirsten Dunst</code></pre>
-<pre><code># Source:   lazy query [?? x 66]
-# Database: BigQueryConnection
-    ano sigla_uf id_municipio tipo_vinculo vinculo_ativo_3112
-  &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;                     &lt;int&gt;
-1  1985 AC       1200054      1                             1
-2  1985 AC       1200054      1                             1
-3  1985 AC       1200054      1                             1
-4  1985 AC       1200054      1                             1
-5  1985 AC       1200054      1                             1
-6  1985 AC       1200054      1                             1
-# ... with 61 more variables: tipo_admissao &lt;chr&gt;,
-#   mes_admissao &lt;int&gt;, mes_desligamento &lt;int&gt;,
-#   motivo_desligamento &lt;chr&gt;, causa_desligamento_1 &lt;chr&gt;,
-#   causa_desligamento_2 &lt;chr&gt;, causa_desligamento_3 &lt;chr&gt;,
-#   faixa_tempo_emprego &lt;chr&gt;, tempo_emprego &lt;dbl&gt;,
-#   faixa_horas_contratadas &lt;chr&gt;,
-#   quantidade_horas_contratadas &lt;int&gt;, ...</code></pre>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 0%" />
@@ -2023,6 +2006,395 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 5 x 66
+    ano sigla_uf id_municipio tipo_vinculo vinculo_ativo_3112
+  &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;                     &lt;int&gt;
+1  1985 AC       1200054      1                             1
+2  1985 AC       1200054      1                             1
+3  1985 AC       1200054      1                             1
+4  1985 AC       1200054      1                             1
+5  1985 AC       1200054      1                             1
+# ... with 61 more variables: tipo_admissao &lt;chr&gt;,
+#   mes_admissao &lt;int&gt;, mes_desligamento &lt;int&gt;,
+#   motivo_desligamento &lt;chr&gt;, causa_desligamento_1 &lt;chr&gt;,
+#   causa_desligamento_2 &lt;chr&gt;, causa_desligamento_3 &lt;chr&gt;,
+#   faixa_tempo_emprego &lt;chr&gt;, tempo_emprego &lt;dbl&gt;,
+#   faixa_horas_contratadas &lt;chr&gt;,
+#   quantidade_horas_contratadas &lt;int&gt;, ...</code></pre>
+</div>
+<p>A base de dados que queremos analiar aqui é a base de pessoas que (potencialmente) trabalham com ciencia de dados.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="perguntas-da-pesquisa">Perguntas da pesquisa</h2>
+<ul>
+<li>Quanto ganha uma pessoa que trabalha com ciência de dados</li>
+</ul>
+<p>Perguntas mais específicas</p>
+<ul>
+<li><p>Quanto o valor médio varia no tempo?</p></li>
+<li><p>Quanto valor médio varia regionalmente?</p></li>
+<li><p>Quanto valor médio varia por características das pessoas?</p>
+<ul>
+<li>Genero</li>
+<li>Raça/cor</li>
+<li>Idade</li>
+</ul></li>
+<li><p>*Qual cargo tem a maior taxa de crescimento dentro daquele setor da economia (CNAE) proporcionalmente a municipios com mais pessoas empregadas naquela CBO</p></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="analiseraisreal_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">ano</th>
+<th style="text-align: right;">media_salario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">3457.553</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">3702.131</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">4229.452</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">4409.327</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">4969.977</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">4886.116</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">4969.408</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="quanto-o-salário-médio-varia-regionalmente">Quanto o salário médio varia regionalmente?</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>Essa visualização a principio é melhor em tabela</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">sigla_uf</th>
+<th style="text-align: right;">media</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AC</td>
+<td style="text-align: right;">2213.220</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AL</td>
+<td style="text-align: right;">1921.249</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AM</td>
+<td style="text-align: right;">4003.298</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AP</td>
+<td style="text-align: right;">2488.921</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BA</td>
+<td style="text-align: right;">3444.450</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CE</td>
+<td style="text-align: right;">3583.833</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DF</td>
+<td style="text-align: right;">6290.945</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ES</td>
+<td style="text-align: right;">2289.896</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GO</td>
+<td style="text-align: right;">3053.561</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MA</td>
+<td style="text-align: right;">1518.701</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MG</td>
+<td style="text-align: right;">3373.300</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MS</td>
+<td style="text-align: right;">2671.339</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MT</td>
+<td style="text-align: right;">2520.127</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PA</td>
+<td style="text-align: right;">4239.167</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PB</td>
+<td style="text-align: right;">1852.823</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PE</td>
+<td style="text-align: right;">4014.886</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PI</td>
+<td style="text-align: right;">1556.301</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PR</td>
+<td style="text-align: right;">2835.612</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RJ</td>
+<td style="text-align: right;">7303.597</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RN</td>
+<td style="text-align: right;">2495.838</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RO</td>
+<td style="text-align: right;">1943.391</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RR</td>
+<td style="text-align: right;">2780.840</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RS</td>
+<td style="text-align: right;">3434.072</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SC</td>
+<td style="text-align: right;">3033.095</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SE</td>
+<td style="text-align: right;">3733.273</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SP</td>
+<td style="text-align: right;">5053.901</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TO</td>
+<td style="text-align: right;">1981.932</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Agora, olhando em gráfico</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="analiseraisreal_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+</div>
+<p>Esse gráfico é legal até para colocar na análise explicativa: DF e RJ aparentemente estão muito acima dos demais estados, conforme destava o gráfico abaixo:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="analiseraisreal_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="analiseraisreal_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+</div>
+<p>Será que essa mesma conclusão permanece quando escolhemos a mediana?</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="analiseraisreal_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
+</div>
+<h3 id="os-salários-variam-de-acordo-com-o-genero">Os salários variam de acordo com o genero?</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">sexo</th>
+<th style="text-align: right;">media</th>
+<th style="text-align: right;">mediana</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">5331.746</td>
+<td style="text-align: right;">3905.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">3600.132</td>
+<td style="text-align: right;">2300.71</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="os-salários-variam-de-acordo-com-a-raçacor">Os salários variam de acordo com a raça/cor?</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">raca_cor</th>
+<th style="text-align: right;">media</th>
+<th style="text-align: right;">mediana</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">3085.090</td>
+<td style="text-align: right;">2748.890</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">4287.588</td>
+<td style="text-align: right;">2888.915</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">3014.454</td>
+<td style="text-align: right;">2072.205</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">6783.212</td>
+<td style="text-align: right;">5338.735</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: right;">2732.073</td>
+<td style="text-align: right;">1749.345</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: right;">5656.755</td>
+<td style="text-align: right;">4888.030</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">raca_cor</th>
+<th style="text-align: left;">sexo</th>
+<th style="text-align: right;">media</th>
+<th style="text-align: right;">mediana</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">3159.286</td>
+<td style="text-align: right;">2816.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">2960.319</td>
+<td style="text-align: right;">2595.230</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">5242.819</td>
+<td style="text-align: right;">3650.350</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">3662.732</td>
+<td style="text-align: right;">2561.010</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">3399.138</td>
+<td style="text-align: right;">2284.440</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">2736.654</td>
+<td style="text-align: right;">1927.200</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">7896.945</td>
+<td style="text-align: right;">6314.250</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">5805.064</td>
+<td style="text-align: right;">4680.625</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">3229.096</td>
+<td style="text-align: right;">2030.745</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">2427.978</td>
+<td style="text-align: right;">1609.990</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">6663.501</td>
+<td style="text-align: right;">6702.870</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">4575.110</td>
+<td style="text-align: right;">2571.270</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="analiseraisreal_files/figure-html5/unnamed-chunk-20-1.png" width="624" /></p>
 </div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
